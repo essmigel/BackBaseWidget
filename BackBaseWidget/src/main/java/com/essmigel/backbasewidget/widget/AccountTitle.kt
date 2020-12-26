@@ -17,7 +17,7 @@ class AccountTitle : LinearLayout {
     private lateinit var binding: WidgetAccountTitleBinding
     var title: String
         get() {
-            return binding.widgetAccountTitleTitle.toString()
+            return binding.widgetAccountTitleTitle.text.toString()
         }
         set(value) {
             binding.widgetAccountTitleTitle.text = value
@@ -25,7 +25,7 @@ class AccountTitle : LinearLayout {
 
     var description: String
         get() {
-            return binding.widgetAccountTitleDescription.toString()
+            return binding.widgetAccountTitleDescription.text.toString()
         }
         set(value) {
             binding.widgetAccountTitleDescription.text = value

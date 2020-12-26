@@ -4,4 +4,12 @@
         <attr name="title" format="string" />
         <attr name="description" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="AmountText">
+        <attr name="amount" format="float" />
+        <attr name="design" format="enum">
+            <enum name="symbol" value="0" />
+            <enum name="code" value="1" />
+        </attr>
+    </declare-styleable>
 </resources>
