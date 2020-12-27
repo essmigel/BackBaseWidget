@@ -1,18 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Total Balance"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.essmigel.backbasewidget.widget.AmountText
+            android:id="@+id/titleAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:amount="3750"
+            app:layout_constraintEnd_toEndOf="@id/title"
+            app:layout_constraintStart_toStartOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/titleImage"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_margin="16dp"
+            android:background="@android:color/holo_blue_bright"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleAmount" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/accountTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="25dp"
+            android:text="Current Accounts"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/titleImage"
+            app:layout_constraintTop_toBottomOf="@+id/titleImage" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/amountTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="€ 2,500.00"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/accountTitle"
+            app:layout_constraintEnd_toEndOf="@+id/titleImage"
+            app:layout_constraintTop_toTopOf="@+id/accountTitle" />
+
+        <com.essmigel.backbasewidget.widget.AccountTitle
+            android:id="@+id/AccountTitleCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:description="NL25 TRIO 0253 8443 20"
+            app:layout_constraintStart_toStartOf="@+id/accountTitle"
+            app:layout_constraintTop_toBottomOf="@+id/accountTitle"
+            app:title="Current Account" />
+
+        <com.essmigel.backbasewidget.widget.AmountText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:amount="1500"
+            app:layout_constraintBottom_toBottomOf="@+id/AccountTitleCurrent"
+            app:layout_constraintEnd_toEndOf="@+id/amountTitle"
+            app:layout_constraintTop_toTopOf="@+id/AccountTitleCurrent" />
+
+        <View
+            android:id="@+id/currentDivider"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AccountTitleCurrent" />
+
+        <com.essmigel.backbasewidget.widget.AccountTitle
+            android:id="@+id/AccountTitleJoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:description="NL25 TRIO 0269 8445 60"
+            app:layout_constraintStart_toStartOf="@+id/AccountTitleCurrent"
+            app:layout_constraintTop_toBottomOf="@+id/currentDivider"
+            app:title="Joint Account" />
+
+
+        <com.essmigel.backbasewidget.widget.AmountText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:amount="1000"
+            app:layout_constraintBottom_toBottomOf="@+id/AccountTitleJoint"
+            app:layout_constraintEnd_toEndOf="@+id/amountTitle"
+            app:layout_constraintTop_toTopOf="@+id/AccountTitleJoint" />
+
+        <View
+            android:id="@+id/jointDivider"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AccountTitleJoint" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/AccountTitleSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Savings Accounts"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/AccountTitleCurrent"
+            app:layout_constraintTop_toBottomOf="@+id/jointDivider" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="€ 0.00"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/AccountTitleSecond"
+            app:layout_constraintEnd_toEndOf="@+id/titleImage"
+            app:layout_constraintTop_toTopOf="@+id/AccountTitleSecond" />
+
+        <com.essmigel.backbasewidget.widget.AccountTitle
+            android:id="@+id/AccountTitleSaving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:description="NL81 TRIO 0212 4719 66"
+            app:layout_constraintStart_toStartOf="@+id/accountTitle"
+            app:layout_constraintTop_toBottomOf="@+id/AccountTitleSecond"
+            app:title="Ssvings Account" />
+
+        <com.essmigel.backbasewidget.widget.AmountText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:amount="0"
+            app:layout_constraintBottom_toBottomOf="@+id/AccountTitleSaving"
+            app:layout_constraintEnd_toEndOf="@+id/amountTitle"
+            app:layout_constraintTop_toTopOf="@+id/AccountTitleSaving" />
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AccountTitleSaving" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -15,6 +15,6 @@ fun View.gone(){
 }
 
 fun Float.formatWithSeparator():String{
-    val decimalFormat = DecimalFormat("#,###.##")
+    val decimalFormat = DecimalFormat("#,##0.00")
     return decimalFormat.format(this)
 }
